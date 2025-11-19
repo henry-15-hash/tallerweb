@@ -1,0 +1,180 @@
+:root{
+  --gap: 1.25rem;
+  --card-radius: 16px;
+  --green-700:#236e27;
+  --green-600:#2f7d32;
+  --green-500:#3e8f3e;
+  --green-200:#cfeec7;
+  --surface:#f5f3ee;
+  --ring:3px;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  background: var(--surface);
+  color:#111;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans";
+}
+
+.page{ max-width:1200px; margin:0 auto; padding:1.5rem; }
+
+.breadcrumb{ font-size:.9rem; margin-bottom:.75rem; color:#3a3a3a; }
+.breadcrumb a{ color:inherit; text-decoration:none; }
+.breadcrumb a:hover{ text-decoration:underline; }
+
+.toolbar{
+  display:flex; flex-wrap:wrap; align-items:center; gap:.75rem;
+  justify-content:space-between; padding:.85rem;
+  background:var(--green-200); border-radius:14px; margin-bottom:1rem;
+}
+.filters{ display:flex; gap:.5rem; flex-wrap:wrap; }
+.filters button{
+  border:0; padding:.55rem .9rem; border-radius:999px; cursor:pointer;
+  background:#e6f7e2; font-weight:700;
+  transition: transform .15s ease, background .15s ease;
+}
+.filters button:hover{ background:#daf3d6; transform: translateY(-1px); }
+.filters button.active{ background:var(--green-600); color:#fff; }
+
+.search{ position:relative; flex:1; min-width:240px; max-width:520px; }
+.search input{
+  width:100%; padding:.65rem 2.2rem .65rem .9rem; border-radius:999px;
+  border:1px solid #a5d89e; background:#fff; font-size:.95rem;
+}
+.search i{ position:absolute; right:.8rem; top:50%; transform:translateY(-50%); opacity:.65; color:var(--green-700); }
+
+.grid{
+  display:grid; gap:var(--gap);
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width:1024px){ .grid{ grid-template-columns: repeat(3, 1fr); } }
+@media (max-width:768px){ .grid{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width:480px){ .grid{ grid-template-columns: 1fr; } }
+
+.card{
+  position:relative;
+  display:flex; flex-direction:column;
+  background:#fff; border-radius:var(--card-radius); overflow:hidden;
+  text-decoration:none; color:inherit;
+  box-shadow:0 6px 18px rgba(0,0,0,.08);
+  transition: transform .18s ease, box-shadow .18s ease, outline-color .18s ease;
+  outline:0 solid transparent; cursor:pointer;
+}
+.card:focus-visible{ outline: var(--ring) solid #7cd67c; }
+.card:hover{ transform: translateY(-4px); box-shadow:0 14px 30px rgba(0,0,0,.14); }
+
+.thumb{
+  aspect-ratio:4/3; background:#f1efe9;
+  display:flex; align-items:center; justify-content:center;
+}
+.thumb img{ width:100%; height:100%; object-fit:contain; }
+
+.body{
+  padding:.9rem .95rem 1rem;
+  display:flex; flex-direction:column; gap:.35rem; background:#fff;
+}
+.name{
+  font-weight:800; color:#143a18; text-transform:uppercase;
+  line-height:1.25; font-size:.98rem; min-height:2.5em;
+}
+.meta{ font-size:.84rem; color:#5b5b5b; }
+.price{ font-weight:800; margin-top:.15rem; }
+
+.cta{
+  position:absolute; right:.75rem; bottom:.75rem;
+  padding:.5rem .85rem; border-radius:999px; background:var(--green-500);
+  color:#fff; font-weight:700; font-size:.9rem;
+  opacity:0; transform: translateY(6px);
+  transition: opacity .18s ease, transform .18s ease;
+  pointer-events:none;
+}
+.card:hover .cta{ opacity:1; transform: translateY(0); }
+
+
+
+
+
+
+
+/* ============================================================
+   FORZAR QUE TODOS LOS PRODUCTOS USEN EL ESTILO OSCURO + GLOW
+   ============================================================ */
+
+/* Si por error un producto tiene fondo blanco → lo corregimos */
+.card,
+.card * {
+  background: #111111 !important;
+}
+
+/* Fondos claros automáticos → FORZAMOS negro */
+.card img {
+  background: transparent !important;
+  filter: drop-shadow(0 0 16px rgba(0,255,127,.45));
+}
+
+/* Texto SIEMPRE VERDE 💚 */
+.card .name,
+.card .price,
+.card .cta,
+.card .name a {
+  color: #00FF7F !important;
+}
+
+/* El botón COMPRAR ahora SIEMPRE igual */
+.card .cta {
+  background: #00FF7F !important;
+  color: #111 !important;
+  border: none !important;
+  border-radius: 999px;
+  box-shadow: 0 0 20px rgba(0,255,127,.6);
+}
+
+.card .cta:hover{
+  background:#00cc66 !important;
+  box-shadow: 0 0 30px rgba(0,255,127,1);
+}
+
+/* Hacer que TODOS tengan el GLOW VERDE */
+.card {
+  border-radius: 16px !important;
+  border: 1px solid rgba(0,255,127,.35) !important;
+  box-shadow:
+      0 0 25px rgba(0,255,127,.40),
+      0 12px 35px rgba(0,0,0,.75) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: url("paisaje.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  overflow-x: hidden;         /* evita scroll horizontal */
+}
+
+
+
+
+
+
+
+

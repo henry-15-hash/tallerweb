@@ -1,0 +1,178 @@
+/* ===== FONDO GENERAL CON IMAGEN ===== */
+/* Cambia "fondo.jpg" por el nombre de tu imagen de fondo */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: url("paisaje.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  overflow-x: hidden;         /* evita scroll horizontal */
+}
+
+/* ===== LOGO ARRIBA A LA DERECHA ===== */
+.header-top {
+  position: absolute;         /* lo sacamos del flujo para que no mueva nada */
+  top: 20px;
+  right: 30px;
+  z-index: 10;
+}
+
+.logo-empresa {
+  width: 200px;               /* 🔹 hazlo más grande o más chico aquí */
+  height: auto;
+}
+
+/* ===== CONTENEDOR CENTRAL ===== */
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== TARJETA NEGRA CON GLOW ===== */
+#form {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 360px;
+  padding: 40px 40px 80px;
+  background-color: #161616;
+  box-shadow: 0px 15px 60px #00FF7F;
+  border-radius: 10px;
+}
+
+#form-body {
+  width: 100%;
+  max-width: 280px;
+}
+
+/* ===== TÍTULOS ===== */
+#welcome-lines {
+  text-align: center;
+  line-height: 1.1;
+}
+
+#welcome-line-1 {
+  color: #00FF7F;
+  font-weight: 600;
+  font-size: 40px;
+}
+
+#welcome-line-2 {
+  color: #ffffff;
+  font-size: 18px;
+  margin-top: 12px;
+}
+
+/* ===== INPUTS ===== */
+#input-area {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-inp {
+  padding: 11px 25px;
+  background: transparent;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+}
+
+.form-inp input {
+  width: 100%;
+  font-size: 13.4px;
+  color: #00FF7F;
+  background: none;
+  border: none;
+}
+
+.form-inp input:focus {
+  outline: none;
+}
+
+/* ===== BOTÓN ===== */
+#submit-button-cvr {
+  margin-top: 20px;
+}
+
+#submit-button {
+  width: 100%;
+  color: #00FF7F;
+  background: transparent;
+  font-weight: 600;
+  padding: 14px 13px;
+  border: 1px solid #00FF7F;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+#submit-button:hover {
+  background-color: #00FF7F;
+  color: #161616;
+}
+
+/* ===== TEXTO INFORMATIVO ===== */
+#forgot-pass {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#forgot-pass span {
+  color: #868686;
+  font-size: 12px;
+}
+
+/* ===== INDICADORES INFERIORES ===== */
+#bar {
+  position: absolute;
+  left: 50%;
+  bottom: -50px;
+  width: 28px;
+  height: 8px;
+  margin-left: -33px;
+  background-color: #00FF7F;
+  border-radius: 10px;
+}
+
+#bar:before,
+#bar:after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ececec;
+  border-radius: 50%;
+}
+
+#bar:before { right: -20px; }
+#bar:after  { right: -38px; }
+
+
+
+
+.form-inp textarea {
+  width: 100%;
+  font-size: 13.4px;
+  color: #00FF7F;
+  background: transparent;       /* 🔹 Evita el fondo blanco */
+  border: none;                  /* 🔹 Eliminamos borde por defecto */
+  resize: none;                  /* Opcional: evita agrandar con el mouse */
+  height: 120px;                 /* Puedes subirlo a 140px si deseas */
+}
+
+.form-inp textarea:focus {
+  outline: none;                 /* 🔹 No se activa borde azul de Windows */
+}
+
+/* 🔹 Para que se vea igual que los otros campos */
+.form-inp {
+  padding: 11px 25px;
+  background: transparent;
+  border: 1px solid #e3e3e3;     /* 🔹 Este borde envuelve al textarea */
+  border-radius: 8px;
+}
+
